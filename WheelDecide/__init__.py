@@ -70,11 +70,11 @@ class wheel:
         global itv
         itv = interval
 
-    def setUnseletedBgcolor(self, color):
+    def setUnselectedBgcolor(self, color):
         global uncolor
         uncolor = color
 
-    def setSeletedBgcolor(self, color):
+    def setSelectedBgcolor(self, color):
         global secolor
         secolor = color
     # thefunctiontoUse↑
