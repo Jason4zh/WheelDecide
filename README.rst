@@ -35,6 +35,10 @@ WheelDecide \_ 转盘决定命运
 
    w.setinterval(1) <- 一个int类型，代表时间间隔
 
+   w.setUnseletedBgcolor("white") <- 一个str类型，代表未选中的元素背景颜色
+
+   w.setSeletedBgcolor("red") <- 一个str类型，代表已选中的元素背景颜色
+
    w.setupwheel(["1","2","3","4","a","b","c","d","!","?","#","%"]) <- 十二个str类型组成的list，代表转盘的元素
 
 
@@ -51,18 +55,13 @@ WheelDecide \_ 转盘决定命运
 
 ::
 
-   w.setinterval()
+   #setinterval值默认为1
 
-   w.setupwheel() #√
+   #setUnseletedBgcolor值默认为"white"
 
+   #setSeletedBgcolor值默认为"red"
 
-
-   w.setupwheel()
-
-   w.setinterval() #×
-
-   #不使用setinterval值默认为1
-
+   ### setupwheel永远是最后一条指令！！！ ###
    
 关于作者
 --------
@@ -88,10 +87,10 @@ Github
 
 
 
-本次更新修改v1.0.0
+本次更新修改v1.0.1
 ------------------
 
-1. 初始化所有文件
+1. 添加了转盘元素背景颜色的自定义
 
 .. |License| image:: https://img.shields.io/badge/License-BSD-yellow
    :target: https://github.com/Jason4zh/WheelDecide/blob/main/LICENSE
