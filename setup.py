@@ -8,7 +8,7 @@ with open('README.rst','r',encoding="utf8") as f:
 
 setup(
     name='WheelDecide',
-    version='1.0.2',
+    version='1.1.0',
     description=(
         'This is a package which can make a wheel to decide.'
     ),

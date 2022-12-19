@@ -2,73 +2,78 @@
 import tkinter
 import time
 import threading
-import sys
 
 # intializations
-itv = 1
+titv = 1
+bsize = 50
 uncolor = "white"
 secolor = "red"
+width = 300
+height = 300
 
 # class
+
+
 class wheel:
     # thefunctiontoUse↓
     def setupwheel(self, list):
         self.root = tkinter.Tk()
         self.root.title('Wheel')
-        self.root.minsize(300, 300)
+        self.root.minsize(width, height)
         self.isloop = False
         self.newloop = False
         self.btn_start = tkinter.Button(
             self.root, text='start', command=self.newtaskT)
-        self.btn_start.place(x=90, y=125, width=50, height=50)
+        self.btn_start.place(x=bsize+40, y=1.5*bsize+50, width=bsize, height=bsize)
 
         self.btn_stop = tkinter.Button(
             self.root, text='stop', command=self.newtaskF)
-        self.btn_stop.place(x=160, y=125, width=50, height=50)
+        self.btn_stop.place(x=2*bsize+60, y=1.5*bsize +
+                            50, width=bsize, height=bsize)
 
         self.btn1 = tkinter.Button(self.root, text=list[0], bg=uncolor)
-        self.btn1.place(x=20, y=20, width=50, height=50)
+        self.btn1.place(x=20, y=20, width=bsize, height=bsize)
 
         self.btn2 = tkinter.Button(self.root, text=list[1], bg=uncolor)
-        self.btn2.place(x=90, y=20, width=50, height=50)
+        self.btn2.place(x=bsize+40, y=20, width=bsize, height=bsize)
 
         self.btn3 = tkinter.Button(self.root, text=list[2], bg=uncolor)
-        self.btn3.place(x=160, y=20, width=50, height=50)
+        self.btn3.place(x=2*bsize+60, y=20, width=bsize, height=bsize)
 
         self.btn4 = tkinter.Button(self.root, text=list[3], bg=uncolor)
-        self.btn4.place(x=230, y=20, width=50, height=50)
+        self.btn4.place(x=3*bsize+80, y=20, width=bsize, height=bsize)
 
         self.btn5 = tkinter.Button(self.root, text=list[4], bg=uncolor)
-        self.btn5.place(x=230, y=90, width=50, height=50)
+        self.btn5.place(x=3*bsize+80, y=bsize+40, width=bsize, height=bsize)
 
         self.btn6 = tkinter.Button(self.root, text=list[5], bg=uncolor)
-        self.btn6.place(x=230, y=160, width=50, height=50)
+        self.btn6.place(x=3*bsize+80, y=2*bsize+60, width=bsize, height=bsize)
 
         self.btn7 = tkinter.Button(self.root, text=list[6], bg=uncolor)
-        self.btn7.place(x=230, y=230, width=50, height=50)
+        self.btn7.place(x=3*bsize+80, y=3*bsize+80, width=bsize, height=bsize)
 
         self.btn8 = tkinter.Button(self.root, text=list[7], bg=uncolor)
-        self.btn8.place(x=160, y=230, width=50, height=50)
+        self.btn8.place(x=2*bsize+60, y=3*bsize+80, width=bsize, height=bsize)
 
         self.btn9 = tkinter.Button(self.root, text=list[8], bg=uncolor)
-        self.btn9.place(x=90, y=230, width=50, height=50)
+        self.btn9.place(x=bsize+40, y=3*bsize+80, width=bsize, height=bsize)
 
         self.btn10 = tkinter.Button(self.root, text=list[9], bg=uncolor)
-        self.btn10.place(x=20, y=230, width=50, height=50)
+        self.btn10.place(x=20, y=3*bsize+80, width=bsize, height=bsize)
 
         self.btn11 = tkinter.Button(self.root, text=list[10], bg=uncolor)
-        self.btn11.place(x=20, y=160, width=50, height=50)
+        self.btn11.place(x=20, y=2*bsize+60, width=bsize, height=bsize)
 
         self.btn12 = tkinter.Button(self.root, text=list[11], bg=uncolor)
-        self.btn12.place(x=20, y=90, width=50, height=50)
+        self.btn12.place(x=20, y=bsize+40, width=bsize, height=bsize)
 
         self.turns = [self.btn1, self.btn2, self.btn3, self.btn4, self.btn5, self.btn6,
                       self.btn7, self.btn8, self.btn9, self.btn10, self.btn11, self.btn12]
         self.root.mainloop()
 
-    def setinterval(self, interval):
-        global itv
-        itv = interval
+    def setTimeInterval(self, interval):
+        global titv
+        titv = interval
 
     def setUnselectedBgcolor(self, color):
         global uncolor
@@ -77,6 +82,15 @@ class wheel:
     def setSelectedBgcolor(self, color):
         global secolor
         secolor = color
+
+    def setMinsize(self, mwidth, mheight):
+        global width, height
+        width = mwidth
+        height = mheight
+
+    def setBtnSize(self, size):
+        global bsize
+        bsize = size
     # thefunctiontoUse↑
 
     def rounds(self):
@@ -87,7 +101,7 @@ class wheel:
             if self.newloop == True:
                 self.newloop = False
                 return
-            time.sleep(itv)
+            time.sleep(titv)
             for x in self.turns:
                 x['bg'] = uncolor
             self.turns[i]['bg'] = secolor

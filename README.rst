@@ -33,7 +33,11 @@ WheelDecide \_ 转盘决定命运
 
    w = WheelDecide.wheel()
 
-   w.setinterval(1) <- 一个int类型，代表时间间隔
+   w.setMinsize(300,300) <- 两个int类型，代表窗口的大小（长和宽）
+
+   w.setBtnSize(50) <- 一个int类型，代表元素大小（边长）
+
+   w.setTimeInterval(1) <- 一个int类型，代表时间间隔
 
    w.setUnselectedBgcolor("white") <- 一个str类型，代表未选中的元素背景颜色
 
@@ -55,7 +59,11 @@ WheelDecide \_ 转盘决定命运
 
 ::
 
-   #setinterval值默认为1
+   #setMinsize值默认为300,300
+
+   #setBtnSize值默认为50
+
+   #setTimeInterval值默认为1
 
    #setUnselectedBgcolor值默认为"white"
 
@@ -83,14 +91,20 @@ Github
 
 ::
 
-   print("Thank you for using!")
+   print("Thank you for using WheelDecide!")
 
 
 
-本次更新修改v1.0.2
+本次更新修改v1.1.0
 ------------------
 
-1. 修复了函数拼写错误
+1. 增加了调整窗口大小函数
+
+2. 增加了调整元素大小函数
+
+3. 修复了函数名冲突的问题
+
+4. 修复了初始化变量冲突的问题
 
 .. |License| image:: https://img.shields.io/badge/License-BSD-yellow
    :target: https://github.com/Jason4zh/WheelDecide/blob/main/LICENSE
