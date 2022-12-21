@@ -1,3 +1,57 @@
+"""
+WheelDecide 转盘决定命运
+
+\生成一个自定义的转盘/
+
+使用方法：
+
+w = WheelDecide.wheel()
+
+w.setMinsize(300,300) <- 两个int类型，代表窗口的大小（长和宽）
+
+w.setBtnSize(50) <- 一个int类型，代表元素大小（边长）
+
+w.setTimeInterval(1) <- 一个int类型，代表时间间隔
+
+w.setUnselectedBgcolor("white") <- 一个str类型，代表未选中的元素背景颜色
+
+w.setSelectedBgcolor("red") <- 一个str类型，代表已选中的元素背景颜色
+
+w.setupwheel(["1","2","3","4","a","b","c","d","!","?","#","%"]) <- 十二个str类型组成的list，代表转盘的元素
+
+注意事项：
+
+setMinsize值默认为300,300
+
+setBtnSize值默认为50
+
+setTimeInterval值默认为1
+
+setUnselectedBgcolor值默认为"white"
+
+setSelectedBgcolor值默认为"red"
+
+setupwheel永远是最后一条指令！！！
+
+关于作者：
+
+作者：
+
+Jason4zh
+
+邮件:
+
+13640817984@163.com
+
+Python包：
+
+https://pypi.org/project/WheelDecide/
+
+Github项目：
+
+https://github.com/Jason4zh/WheelDecide/
+"""
+
 # importations
 import tkinter
 import time
@@ -8,23 +62,22 @@ titv = 1
 bsize = 50
 uncolor = "white"
 secolor = "red"
-width = 300
-height = 300
+mwidth = 300
+mheight = 300
 
 # class
-
-
-class wheel:
+class wheel():
     # thefunctiontoUse↓
     def setupwheel(self, list):
         self.root = tkinter.Tk()
         self.root.title('Wheel')
-        self.root.minsize(width, height)
+        self.root.minsize(mwidth, mheight)
         self.isloop = False
         self.newloop = False
         self.btn_start = tkinter.Button(
             self.root, text='start', command=self.newtaskT)
-        self.btn_start.place(x=bsize+40, y=1.5*bsize+50, width=bsize, height=bsize)
+        self.btn_start.place(x=bsize+40, y=1.5*bsize+50,
+                             width=bsize, height=bsize)
 
         self.btn_stop = tkinter.Button(
             self.root, text='stop', command=self.newtaskF)
@@ -83,10 +136,10 @@ class wheel:
         global secolor
         secolor = color
 
-    def setMinsize(self, mwidth, mheight):
-        global width, height
-        width = mwidth
-        height = mheight
+    def setMinsize(self, width, height):
+        global mwidth, mheight
+        mwidth = width
+        mheight = height
 
     def setBtnSize(self, size):
         global bsize

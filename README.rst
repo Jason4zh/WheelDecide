@@ -45,10 +45,10 @@ WheelDecide \_ 转盘决定命运
 
    w.setupwheel(["1","2","3","4","a","b","c","d","!","?","#","%"]) <- 十二个str类型组成的list，代表转盘的元素
 
-
 **!注意事项!**
 
 *导入*
+
 ::
 
    import WheelDecide #√
@@ -73,6 +73,7 @@ WheelDecide \_ 转盘决定命运
    
 关于作者
 --------
+
 Author
 
 *Jason4zh*
@@ -95,20 +96,18 @@ Github
 
 
 
-本次更新修改v1.1.0
+本次更新修改v1.1.2
 ------------------
 
-1. 增加了调整窗口大小函数
+1. 修改了rst文件Pypi附图
 
-2. 增加了调整元素大小函数
+2. 修改了rst文件文字内容
 
-3. 修复了函数名冲突的问题
-
-4. 修复了初始化变量冲突的问题
+3. 添加了 *__init__.py* 的库介绍
 
 .. |License| image:: https://img.shields.io/badge/License-BSD-yellow
    :target: https://github.com/Jason4zh/WheelDecide/blob/main/LICENSE
-.. |Pypi| image:: https://img.shields.io/badge/Pypi-v1.0-blue
+.. |Pypi| image:: https://img.shields.io/badge/Pypi-v1.1-blue
    :target: https://pypi.org/project/WheelDecide
 .. |Author| image:: https://img.shields.io/badge/Author-Jason4zh-green
    :target: https://pypi.org/user/Jason4zh
