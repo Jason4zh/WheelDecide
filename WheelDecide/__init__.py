@@ -1,55 +1,102 @@
 """
-WheelDecide 转盘决定命运
+WheelDecide \_ 转盘决定命运
+==================================
 
-\生成一个自定义的转盘/
+安装方法
+--------
 
-使用方法：
+通过 pip 安装
 
-w = WheelDecide.wheel()
+::
 
-w.setMinsize(300,300) <- 两个int类型，代表窗口的大小（长和宽）
+   pip install WheelDecide
 
-w.setBtnSize(50) <- 一个int类型，代表元素大小（边长）
+更新
 
-w.setTimeInterval(1) <- 一个int类型，代表时间间隔
+::
 
-w.setUnselectedBgcolor("white") <- 一个str类型，代表未选中的元素背景颜色
+   pip install WheelDecide --upgrade
 
-w.setSelectedBgcolor("red") <- 一个str类型，代表已选中的元素背景颜色
+使用方法
+--------
 
-w.setupwheel(["1","2","3","4","a","b","c","d","!","?","#","%"]) <- 十二个str类型组成的list，代表转盘的元素
+导入
 
-注意事项：
+::
 
-setMinsize值默认为300,300
+   import WheelDecide
 
-setBtnSize值默认为50
+使用
 
-setTimeInterval值默认为1
+::
 
-setUnselectedBgcolor值默认为"white"
+   w = WheelDecide.wheel()
 
-setSelectedBgcolor值默认为"red"
+   w.setTitle("Wheel") <- 一个str类型，代表窗口的标题
 
-setupwheel永远是最后一条指令！！！
+   w.setMinsize(300,300) <- 两个int类型，代表窗口的大小（长和宽）
 
-关于作者：
+   w.setBtnSize(50) <- 一个int类型，代表元素大小（边长）
 
-作者：
+   w.setTimeInterval(1) <- 一个int类型，代表时间间隔
 
-Jason4zh
+   w.setUnselectedBgcolor("white") <- 一个str类型，代表未选中的元素背景颜色
 
-邮件:
+   w.setSelectedBgcolor("red") <- 一个str类型，代表已选中的元素背景颜色
 
-13640817984@163.com
+   w.setupwheel(["1","2","3","4","a","b","c","d","!","?","#","%"]) <- 十二个str类型组成的list，代表转盘的元素
+   
+**!注意事项!**
 
-Python包：
+*导入*
 
-https://pypi.org/project/WheelDecide/
+::
 
-Github项目：
+   import WheelDecide #√
 
-https://github.com/Jason4zh/WheelDecide/
+   import wheeldecide #×
+
+*使用*
+
+::
+   
+   #setTitle值默认为"Wheel"
+
+   #setMinsize值默认为300,300
+
+   #setBtnSize值默认为50
+
+   #setTimeInterval值默认为1
+
+   #setUnselectedBgcolor值默认为"white"
+
+   #setSelectedBgcolor值默认为"red"
+
+   ### setupwheel永远是最后一条指令！！！ ###
+   
+关于作者
+--------
+
+Author
+
+*Jason4zh*
+
+Email
+
+*13640817984@163.com*
+
+Package
+
+*https://pypi.org/project/WheelDecide/*
+
+Github
+
+*https://github.com/Jason4zh/WheelDecide/*
+
+::
+
+   print("Thank you for using WheelDecide!")
+   
 """
 
 # importations
@@ -64,13 +111,14 @@ uncolor = "white"
 secolor = "red"
 mwidth = 300
 mheight = 300
+roottitle = "wheel"
 
 # class
 class wheel():
     # thefunctiontoUse↓
-    def setupwheel(self, list):
+    def setupwheel(self, list: list):
         self.root = tkinter.Tk()
-        self.root.title('Wheel')
+        self.root.title(roottitle)
         self.root.minsize(mwidth, mheight)
         self.isloop = False
         self.newloop = False
@@ -124,26 +172,31 @@ class wheel():
                       self.btn7, self.btn8, self.btn9, self.btn10, self.btn11, self.btn12]
         self.root.mainloop()
 
-    def setTimeInterval(self, interval):
+    def setTimeInterval(self, interval: int):
         global titv
         titv = interval
 
-    def setUnselectedBgcolor(self, color):
+    def setUnselectedBgcolor(self, color: str):
         global uncolor
         uncolor = color
 
-    def setSelectedBgcolor(self, color):
+    def setSelectedBgcolor(self, color: str):
         global secolor
         secolor = color
 
-    def setMinsize(self, width, height):
+    def setMinsize(self, width: int, height: int):
         global mwidth, mheight
         mwidth = width
         mheight = height
 
-    def setBtnSize(self, size):
+    def setBtnSize(self, size: int):
         global bsize
         bsize = size
+
+    def setTitle(self,title: str):
+        global roottitle
+        roottitle = title
+    
     # thefunctiontoUse↑
 
     def rounds(self):

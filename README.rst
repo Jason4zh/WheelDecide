@@ -33,6 +33,8 @@ WheelDecide \_ 转盘决定命运
 
    w = WheelDecide.wheel()
 
+   w.setTitle("Wheel") <- 一个str类型，代表窗口的标题
+
    w.setMinsize(300,300) <- 两个int类型，代表窗口的大小（长和宽）
 
    w.setBtnSize(50) <- 一个int类型，代表元素大小（边长）
@@ -58,6 +60,8 @@ WheelDecide \_ 转盘决定命运
 *使用*
 
 ::
+   
+   #setTitle值默认为"Wheel"
 
    #setMinsize值默认为300,300
 
@@ -94,16 +98,14 @@ Github
 
    print("Thank you for using WheelDecide!")
 
-
-
-本次更新修改v1.1.2
+本次更新修改v1.1.3
 ------------------
 
-1. 修改了rst文件Pypi附图
+1. 添加了 *title()* 命令
 
 2. 修改了rst文件文字内容
 
-3. 添加了 *__init__.py* 的库介绍
+3. 修改了 *__init__.py* 的库介绍
 
 .. |License| image:: https://img.shields.io/badge/License-BSD-yellow
    :target: https://github.com/Jason4zh/WheelDecide/blob/main/LICENSE
